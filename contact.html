@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | TWA MUN</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      color: #1a202c;
+    }
+
+    .form-input {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      font-family: 'Figtree', sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #9333ea;
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 1rem;
+      transition: max-height 0.4s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .nav-links.active {
+        max-height: 500px;
+      }
+
+      nav a {
+        padding: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">TWA MUN</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="committees.html">Committees</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Contact the Organisers</h2>
+      <p>If you have any questions or concerns, feel free to get in touch with us using the form below. We'll get back to you as soon as possible!</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem; max-width: 600px; margin: 2rem auto;">
+        <label>
+          Full Name
+          <input type="text" name="name" required class="form-input" />
+        </label>
+
+        <label>
+          Email Address
+          <input type="email" name="email" required class="form-input" />
+        </label>
+
+        <label>
+          Message
+          <textarea name="message" rows="5" required class="form-input"></textarea>
+        </label>
+
+        <button type="submit" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 3l20 9-20 9 5-9-5-9z"/></svg>
+          Send Message
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 TWA MUN. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      toggleBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
+

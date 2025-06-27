@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<!-- Shared Navbar HTML -->
+<nav class="bg-blue-800 text-white p-4 md:px-8 flex items-center justify-between">
+    <div class="text-xl font-bold">TWA MUN</div>
+    <div class="md:hidden">
+      <button id="menu-toggle" class="focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="menu" class="hidden md:flex space-x-6 text-sm">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="about.html" class="hover:underline">About</a>
+      <a href="committees.html" class="hover:underline">Committees</a>
+      <a href="registration.html" class="hover:underline">Register</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+    </div>
+  </nav>
+  
+  <div id="mobile-menu" class="md:hidden hidden flex flex-col items-start bg-blue-700 text-white px-4 py-2 space-y-2 text-sm">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="committees.html">Committees</a>
+    <a href="registration.html">Register</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    if (toggleBtn && menu) {
+      toggleBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
+    }
+  </script>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | TWA MUN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <div class="p-6 max-w-5xl mx-auto">
+    <h1 class="text-4xl font-bold mb-4">About TWA MUN</h1>
+    <p class="mb-4">TWA MUN is an annual Model United Nations conference hosted by The Whitefield Academy. Our mission is to foster global citizenship and leadership through debate, collaboration, and diplomacy.</p>
+    <p class="mb-4">Founded in 2019, TWA MUN has grown into a prestigious platform for young minds to challenge world issues and propose innovative solutions.</p>
+  </div>
+</body>
+</html>
+
+<!-- committees.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Committees | TWA MUN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+  <div class="p-6 max-w-5xl mx-auto">
+    <h1 class="text-4xl font-bold mb-6">Committees</h1>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="border p-4 rounded shadow">
+        <h2 class="text-2xl font-semibold">UNSC</h2>
+        <p>Topic: Conflict Resolution in the Middle East</p>
+      </div>
+      <div class="border p-4 rounded shadow">
+        <h2 class="text-2xl font-semibold">WHO</h2>
+        <p>Topic: Global Pandemic Preparedness</p>
+      </div>
+      <div class="border p-4 rounded shadow">
+        <h2 class="text-2xl font-semibold">UNHRC</h2>
+        <p>Topic: Protecting Refugee Rights</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

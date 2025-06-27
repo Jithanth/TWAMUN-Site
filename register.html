@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | TWA MUN</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      color: #1a202c;
+    }
+
+    .form-input {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      font-family: 'Figtree', sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #9333ea;
+      box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2);
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 1rem;
+      transition: max-height 0.4s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .nav-links.active {
+        max-height: 500px;
+      }
+
+      nav a {
+        padding: 0.5rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">TWA MUN</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="committees.html">Committees</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="card">
+      <h2>Delegate Registration</h2>
+      <p>Fill out the form below to register for TWA MUN 2025. We look forward to seeing you there!</p>
+      <form action="https://formspree.io/f/your-form-id" method="POST" style="display: flex; flex-direction: column; gap: 1.25rem; max-width: 600px; margin: 2rem auto;">
+        <label>
+          Full Name
+          <input type="text" name="name" required class="form-input" />
+        </label>
+
+        <label>
+          School Name
+          <input type="text" name="school" required class="form-input" />
+        </label>
+
+        <label>
+          Grade / Year
+          <input type="text" name="grade" required class="form-input" />
+        </label>
+
+        <label>
+          Preferred Committee
+          <input type="text" name="committee" required class="form-input" />
+        </label>
+
+        <label>
+          Email Address
+          <input type="email" name="email" required class="form-input" />
+        </label>
+
+        <button type="submit" class="btn">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M2 3l20 9-20 9 5-9-5-9z"/></svg>
+          Submit Registration
+        </button>
+      </form>
+    </section>
+
+    <section>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7773.274884468723!2d77.58080887534193!3d13.058734487264676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae181f1cd5a0df%3A0xa45fe4f497e0e80a!2sTrio%20World%20Academy!5e0!3m2!1sen!2sin!4v1751012842777!5m2!1sen!2sin" style="border:0; width: 100%; height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 TWA MUN. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      toggleBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

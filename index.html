@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TWA MUN | Home</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    .slideshow-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .slides {
+      display: flex;
+      width: 300%;
+      animation: slideAnimation 12s infinite;
+    }
+    .slide {
+      flex: 1 0 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+    }
+    @keyframes slideAnimation {
+      0%, 33% { transform: translateX(0); }
+      34%, 66% { transform: translateX(-100%); }
+      67%, 100% { transform: translateX(-200%); }
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      transition: max-height 0.4s ease-in-out;
+    }
+    @media (max-width: 768px) {
+      .slide {
+        height: 250px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+      }
+      .nav-links.active {
+        max-height: 500px;
+      }
+      nav a {
+        padding: 0.5rem 0;
+      }
+    }
+    @media (min-width: 769px) {
+      .nav-links {
+        display: flex !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">TWA MUN</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="committees.html">Committees</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="slideshow-container">
+      <div class="slides">
+        <div class="slide" style="background-image: url('slideshow/Slide1.jpg');"></div>
+        <div class="slide" style="background-image: url('slideshow/Slide2.jpg');"></div>
+        <div class="slide" style="background-image: url('slideshow/Slide3.jpg');"></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Welcome to TWA MUN</h2>
+      <p>Join us for an unforgettable experience where diplomacy, debate, and dynamic thinking converge. TWA MUN brings together delegates from around the world to simulate real-world challenges in a forum designed to inspire the next generation of global leaders.</p>
+    </section>
+
+    <section class="card">
+      <h2>Why Attend?</h2>
+      <p>Whether you're an experienced delegate or brand new to MUN, TWA MUN offers a welcoming yet challenging environment. Our team of seasoned chairs and crisis directors ensure an enriching experience for all participants.</p>
+    </section>
+
+    <section class="card">
+      <h2>What to Expect</h2>
+      <ul>
+        <li>High-quality background guides and preparation resources</li>
+        <li>Unique committees that span from the real world to fictional universes</li>
+        <li>A vibrant and engaging community of like-minded individuals</li>
+        <li>A beautiful campus and excellent facilities at Trio World Academy</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 TWA MUN. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      toggleBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

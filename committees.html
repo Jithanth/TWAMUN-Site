@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Committees | TWA MUN</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <style>
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav .nav-links {
+      display: flex;
+      gap: 1rem;
+      transition: max-height 0.4s ease-in-out;
+    }
+
+    .secondary-nav {
+      position: fixed;
+      top: 100px;
+      left: 0;
+      height: calc(100vh - 100px);
+      width: 220px;
+      padding: 2rem 1rem;
+      background: linear-gradient(to bottom, #fefce8, #ede9fe);
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.05);
+      border-radius: 0 1rem 1rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 1.5rem;
+      z-index: 30;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      .nav-links.active {
+        max-height: 500px;
+      }
+
+      nav a {
+        padding: 0.5rem 0;
+      }
+
+      .secondary-nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">TWA MUN</div>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="committees.html">Committees</a>
+      <a href="register.html">Register</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <aside class="secondary-nav">
+    <a href="#unsc">UNSC</a>
+    <a href="#icj">ICJ</a>
+    <a href="#senate">US Senate</a>
+    <a href="#copuos">COPUOS</a>
+    <a href="#crisis">Crisis Committee</a>
+    <a href="#shield">S.H.E.I.L.D.</a>
+  </aside>
+
+  <main>
+    <section id="unsc" class="card">
+      <h2>United Nations Security Council (UNSC)</h2>
+      <p><strong>Agenda:</strong> Equitable and sustainable distribution of Middle Eastern oil resources.</p>
+      <p>The UNSC will delve into the geopolitics and economic imperatives surrounding oil in the Middle East. Delegates will confront the challenge of equitable access while ensuring global stability and compliance with international law.</p>
+      <a href="downloads/UNSC.txt" class="btn" download>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zM5 18h14v2H5z"/></svg>
+        Background Guide
+      </a>
+      <p>Contact: <a href="mailto:unsc@twamun.org">unsc@twamun.org</a></p>
+    </section>
+
+    <section id="icj" class="card">
+      <h2>International Court of Justice (ICJ)</h2>
+      <p><strong>Agenda:</strong> Assigning responsibility for climate change and environmental degradation.</p>
+      <p>The ICJ committee will debate the legal and moral responsibilities of nations contributing to climate change. Delegates will explore precedent and propose solutions for international legal accountability.</p>
+      <a href="downloads/ICJ.txt" class="btn" download>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zM5 18h14v2H5z"/></svg>
+        Background Guide
+      </a>
+      <p>Contact: <a href="mailto:icj@twamun.org">icj@twamun.org</a></p>
+    </section>
+
+    <section id="senate" class="card">
+      <h2>United States Senate</h2>
+      <p><strong>Agenda:</strong> Examining the role of tariffs in contemporary American economic policy.</p>
+      <p>This simulation of the U.S. Senate will have delegates debate tariff impositions and their global implications. Participants must balance political loyalty, economic theory, and national interests.</p>
+      <a href="downloads/USSenate.txt" class="btn" download>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zM5 18h14v2H5z"/></svg>
+        Background Guide
+      </a>
+      <p>Contact: <a href="mailto:senate@twamun.org">senate@twamun.org</a></p>
+    </section>
+
+    <section id="copuos" class="card">
+      <h2>Committee on the Peaceful Uses of Outer Space (COPUOS)</h2>
+      <p><strong>Agenda:</strong> Establishing a legal framework for the exploitation of space resources.</p>
+      <p>Delegates will address challenges around mining celestial bodies, sovereignty in space, and ethics of off-world commercialization in this futuristic and legally intense debate.</p>
+      <a href="downloads/COPUOS.txt" class="btn" download>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zM5 18h14v2H5z"/></svg>
+        Background Guide
+      </a>
+      <p>Contact: <a href="mailto:copuos@twamun.org">copuos@twamun.org</a></p>
+    </section>
+
+    <section id="crisis" class="card">
+      <h2>Crisis Committee</h2>
+      <p><strong>Agenda:</strong> Deliberating on the legitimacy of sovereignty and occupation of the Iberian Peninsula amid Napoleonic aggression.</p>
+      <p>This fast-paced committee will simulate crisis diplomacy in 1808 Europe. Delegates will respond to real-time developments and balance ideology, diplomacy, and warfare in this historical whirlwind.</p>
+      <a href="downloads/Crisis.txt" class="btn" download>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zM5 18h14v2H5z"/></svg>
+        Background Guide
+      </a>
+      <p>Contact: <a href="mailto:crisis@twamun.org">crisis@twamun.org</a></p>
+    </section>
+
+    <section id="shield" class="card">
+      <h2>Fantasy Committee – S.H.E.I.L.D.</h2>
+      <p><strong>Agenda:</strong> Finding neutral ground regarding the Sokovia Accords and determining consequences for Bucky Barnes and remnants of Hydra.</p>
+      <p>In this creative and dynamic fantasy committee, delegates must walk the tightrope between security and liberty in a post-Civil War Marvel Universe.</p>
+      <a href="downloads/SHIELD.txt" class="btn" download>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 16l4-5h-3V4h-2v7H8l4 5zM5 18h14v2H5z"/></svg>
+        Background Guide
+      </a>
+      <p>Contact: <a href="mailto:shield@twamun.org">shield@twamun.org</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 TWA MUN. All rights reserved.
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggleBtn = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      toggleBtn.addEventListener('click', function () {
+        navLinks.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
